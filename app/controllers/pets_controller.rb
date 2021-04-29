@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  before_action :find_pet, only: %i[show edit update destroy]
+
   def new
     @pet = Pet.new
     authorize @pet
@@ -13,6 +15,13 @@ class PetsController < ApplicationController
   end
 
   def show
+    authorize @pet
+  end
+
+  private
+
+  def find_pet
+    @pet = Pet.find(params[:id])
   end
 
   def pet_params
