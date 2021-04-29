@@ -42,4 +42,3 @@ yarn-debug.log*
 .DS_Store
 .env*
 .env*
-app/views/pages/home.html.erb
