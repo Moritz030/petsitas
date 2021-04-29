@@ -1,0 +1,8 @@
+<div class="container">
+<%= simple_form_for [@pet, @offer] do |f| %>
+ <h1><%= @pet.name %></h1>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit %>
+<% end %>
+</div>

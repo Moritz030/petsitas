@@ -5,15 +5,14 @@ class OfferPolicy < ApplicationPolicy
     end
   end
 
-  def create
+  def new?
     true
   end
+  # def edit?
+  #   belongs_to_user_or_admin?
+  # end
 
-  def edit
-    belongs_to_user_or_admin?
-  end
-
-  def destroy
-    belongs_to_user_or_admin?
-  end
+  # def destroy?
+  #   belongs_to_user_or_admin?
+  # end
 end
