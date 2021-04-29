@@ -1,7 +1,7 @@
 class PetPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(species: params(:species))
     end
   end
 
