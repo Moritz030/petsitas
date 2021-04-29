@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner p-5 bg-dark text-centers">
+  <h1 class="text-white" >Petsitas</h1>
+  <p class="text-white">rent a rat</p>
+</div>
+<div class="container">
+  <form action="/offers" method="get" class="form-group">
+    <input type="text" name="species" placeholder="what species?" class="form-control" >
+    <input type="text" name="location" placeholder="city?" class="form-control">
+    <input type="date" name="start_date" placeholder="start date?" class="form-control">
+    <input type="date" name="end_date" placeholder="end date?" class="form-control">
+    <input type="submit">
+  </form>
+</div>
