@@ -9,6 +9,10 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def edit?
     belongs_to_user_or_admin?
   end
