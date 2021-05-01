@@ -13,10 +13,18 @@ class OffersController < ApplicationController
     authorize @offer
   end
   def create
-    
+    @offer = Offer.new(get_params)
+    @pet = Pet.find(params[:pet_id])
+    @offer.pet = @pet
+    authorize @offer
+    if @offer.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
   end
-#   private
-#   def get_params
-#     params.request {"species"=>"asd", "location"=>"yX", "start_date"=>"0111-11-11", "end_date"=>"0001-11-11"}
-#    end
+  private
+  def get_params
+    params.require(:offer).permit(:start_date, :end_date)
+  end
 end
