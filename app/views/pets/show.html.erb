@@ -1,2 +1,10 @@
 <h1>Pets#show</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+<%= cl_image_tag @pet.picture.key,
+      width: 150, height: 150, crop: :thumb, gravity: :face %>
+<h2>
+  <%= @pet.name %></h2>
+<p><%= @pet.description %></p>
+<p><%= @pet.location %></p>
+<p>owned by:  <%= @pet.user.first_name %>
+  <%= @pet.user.last_name %>
+</p>
