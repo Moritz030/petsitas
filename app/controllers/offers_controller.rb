@@ -12,14 +12,19 @@ class OffersController < ApplicationController
         offer.pet.location.downcase == params[:location].downcase
       end
     end
-    unless params[:start_date].blank? || params[:end_date].blank?
+    unless params[:start_date].blank?
        @offers = @offers.select do |offer|
           # if offer.start_date >  && offer.end_date
           start_date = Date.parse(params[:start_date])
-         end_date = Date.parse(params[:end_date])
-         (start_date < offer.start_date) && (end_date > offer.end_date)
+          start_date <= offer.start_date
          # raise
        end
+    end
+    unless params[:end_date].blank?
+      @offers = @offers.select do |offer|
+        end_date = Date.parse(params[:end_date])
+        end_date >= offer.end_date
+      end
     end
   end
 
