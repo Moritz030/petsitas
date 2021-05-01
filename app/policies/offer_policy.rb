@@ -5,6 +5,10 @@ class OfferPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    record.pet.user == user
+  end
+
   def new?
     true
   end
