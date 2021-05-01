@@ -5,3 +5,6 @@
   <%= @pet.name %></h2>
 <p><%= @pet.description %></p>
 <p><%= @pet.location %></p>
+<p>owned by:  <%= @pet.user.first_name %>
+  <%= @pet.user.last_name %>
+</p>
