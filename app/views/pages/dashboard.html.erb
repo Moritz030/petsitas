@@ -1,5 +1,16 @@
 <h1>Welcome to your dashboard</h1>
 <h2>Your Pets</h2>
+<% @pets.each do |pet| %>
+  <p>render pet card</p>
+  <%= render 'components/pet_card' %>
+  <% pet.offers.each do |offer| %>
+    <p>offer card for pet</p>
+    <p>requests</p>
+    <% offer.requests.each do |request| %>
+      <p>request card for request</p>
+    <% end %>
+  <% end %>
+<% end %>
 <hr>
 <h2>Your Offers</h2>
 <h6>pending requests for this offer</h6>

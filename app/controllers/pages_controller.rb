@@ -4,5 +4,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @pets = current_user.pets
+    @offers = @pets.offers
+    @requests = current_user.requests
   end
 end
