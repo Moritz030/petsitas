@@ -24,3 +24,5 @@
 <% @requests.each do |request| %>
   <%= render 'components/request_card', request: request  %>
 <% end %>
+
+<%= link_to "Add Pet to profile", new_pet_path %>

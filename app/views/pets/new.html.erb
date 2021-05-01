@@ -1,10 +1,12 @@
-<h1>Pets#new</h1>
-<p>Find me in app/views/pets/new.html.erb</p>
-<%= simple_form_for @pet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :species %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :picture %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <h1>Add new Pet to profile</h1>
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :species %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :picture %>
+    <%= f.button :submit %>
+  <% end %>
+  <%= link_to "Dashboard", dashboard_path %>
+</div>

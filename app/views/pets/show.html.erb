@@ -8,3 +8,6 @@
 <p>owned by:  <%= @pet.user.first_name %>
   <%= @pet.user.last_name %>
 </p>
+<%= link_to "Create offer for pet", new_pet_offer_path(@pet) %>
+<br>
+<%= link_to "Dashboard", dashboard_path %>
