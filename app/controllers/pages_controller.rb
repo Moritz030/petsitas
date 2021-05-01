@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @pets = current_user.pets
-    @offers = @pets.offers
+    @offers = current_user.offers
     @requests = current_user.requests
   end
 end

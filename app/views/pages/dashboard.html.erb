@@ -1,18 +1,26 @@
 <h1>Welcome to your dashboard</h1>
 <h2>Your Pets</h2>
-<% @pets.each do |pet| %>
-  <p>render pet card</p>
-  <%= render 'components/pet_card' %>
-  <% pet.offers.each do |offer| %>
-    <p>offer card for pet</p>
-    <p>requests</p>
-    <% offer.requests.each do |request| %>
-      <p>request card for request</p>
-    <% end %>
+<div class="d-flex">
+  <% @pets.each do |pet| %>
+    <% @pet = pet%>
+    <%= render 'components/pet_card' %>
   <% end %>
-<% end %>
+</div>
 <hr>
 <h2>Your Offers</h2>
-<h6>pending requests for this offer</h6>
-<hr>
-<h2>Your pending requests</h2>
+<% @offers.each do |offer| %>
+  <hr>
+  <%= render 'components/offer_card', offer: offer %>
+  <%# attached requests %>
+  <h6>Requests:</h6>
+  <div class="d-flex">
+    <% offer.requests.each do |request| %>
+      <%= render 'components/request_card', request: request  %>
+    <% end %>
+  </div>
+  <hr>
+<% end %>
+<h2>My Requests</h2>
+<% @requests.each do |request| %>
+  <%= render 'components/request_card', request: request  %>
+<% end %>
