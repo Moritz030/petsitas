@@ -7,6 +7,8 @@
     <%= render 'components/pet_card' %>
   <% end %>
 </div>
+<%= link_to "Add Pet to profile", new_pet_path %>
+
 <hr>
 <h2>Your Offers</h2>
 <% @offers.each do |offer| %>
@@ -26,5 +28,4 @@
   <%= render 'components/request_card', request: request  %>
 <% end %>
 
-<%= link_to "Add Pet to profile", new_pet_path %>
 </div>
