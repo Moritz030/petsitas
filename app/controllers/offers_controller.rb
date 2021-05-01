@@ -18,7 +18,7 @@ class OffersController < ApplicationController
     @offer.pet = @pet
     authorize @offer
     if @offer.save
-      redirect_to pet_path(@pet)
+      redirect_to dashboard_path
     else
       render :new
     end
