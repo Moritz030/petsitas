@@ -3,7 +3,7 @@ class OffersController < ApplicationController
   def index
     offers = policy_scope(Offer)
     @offers_search = offers.select do |offer|
-      offer.pet.species == params[:species]
+      offer.pet.species.downcase == params[:species].downcase
     end
   end
 
