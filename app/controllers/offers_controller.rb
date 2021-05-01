@@ -2,9 +2,14 @@ class OffersController < ApplicationController
 
   def index
     offers = policy_scope(Offer)
-    @offers_search = offers.select do |offer|
+    @offers_searched_by_species = offers.select do |offer|
       offer.pet.species.downcase == params[:species].downcase
     end
+    @offers_searched_by_location = @offers_searched_by_species.select do |offer|
+      offer.pet.location.downcase == params[:location].downcase
+    end
+
+    @offers_search = @offers_searched_by_location
   end
 
   def new
