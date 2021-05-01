@@ -1,0 +1,26 @@
+<h1>Welcome to your dashboard</h1>
+<h2>Your Pets</h2>
+<div class="d-flex">
+  <% @pets.each do |pet| %>
+    <% @pet = pet%>
+    <%= render 'components/pet_card' %>
+  <% end %>
+</div>
+<hr>
+<h2>Your Offers</h2>
+<% @offers.each do |offer| %>
+  <hr>
+  <%= render 'components/offer_card', offer: offer %>
+  <%# attached requests %>
+  <h6>Requests:</h6>
+  <div class="d-flex">
+    <% offer.requests.each do |request| %>
+      <%= render 'components/request_card', request: request  %>
+    <% end %>
+  </div>
+  <hr>
+<% end %>
+<h2>My Requests</h2>
+<% @requests.each do |request| %>
+  <%= render 'components/request_card', request: request  %>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="">
+  <p>Request by: <%= request.user %></p>
+  <p>Message: <%= request.message %></p>
+  <div class="btn btn-primary">
+    <% if request.user == current_user %>
+      delete
+    <% end %>
+  <% else %>
+    accept
+  </div>
+</div>
