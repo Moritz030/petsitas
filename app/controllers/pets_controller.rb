@@ -10,8 +10,11 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     authorize @pet
     @pet.user = current_user
-    @pet.save
-    redirect_to pet_path(@pet)
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
   end
 
   def show
