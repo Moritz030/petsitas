@@ -1,5 +1,5 @@
 class Offer < ApplicationRecord
-  has_many :requests
+  has_many :requests, dependent: :destroy
   belongs_to :pet
   has_one :user, through: :pet
   validates :start_date, :end_date, presence: true

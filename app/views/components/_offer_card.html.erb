@@ -5,6 +5,7 @@
       <h2><%= offer.pet.name  %></h2>
       <p><%= offer.start_date %> until <%= offer.end_date %> <strong> in <%= offer.pet.location  %></strong></p>
       <p><%= link_to "Show pet", pet_path(offer.pet)  %> <%= link_to "request", new_offer_request_path(offer), class: "" if current_user != offer.user%> </p>
+      <p><%= link_to 'delete', offer_path(offer), method: :delete if current_user == offer.user %></p>
     </div>
   </div>
 </div>
