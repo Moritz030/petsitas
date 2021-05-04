@@ -5,15 +5,15 @@ class RequestPolicy < ApplicationPolicy
     end
   end
 
-  def create
+  def create?
     true
   end
 
-  def edit
+  def edit?
     belongs_to_user_or_admin?
   end
 
-  def destroy
+  def destroy?
     belongs_to_user_or_admin?
   end
 end

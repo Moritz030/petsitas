@@ -1,8 +1,10 @@
-<div class="p-3">
-  <div class="d-flex">
-    <%= cl_image_tag offer.pet.picture.key,
-      width: 60, height: 60, crop: :thumb, gravity: :face %>
-    <h6>Offer for <%= offer.pet.name %></h6>
+<div class="col-12 col-md-6 col-lg-3 p-3 pl-0">
+  <div class="card-product">
+    <%= cl_image_tag(offer.pet.picture.key) %>
+    <div class="card-product-infos">
+      <h2><%= offer.pet.name  %></h2>
+      <p><%= offer.start_date %> until <%= offer.end_date %> <strong> in <%= offer.pet.location  %></strong></p>
+      <p><%= link_to "Show pet", pet_path(offer.pet)  %> <%= link_to "request", new_offer_request_path(offer), class: "" if current_user != offer.user%> </p>
+    </div>
   </div>
-  <p>from <%= offer.start_date %>to <%= offer.end_date %>.</p>
 </div>
