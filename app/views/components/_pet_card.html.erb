@@ -10,4 +10,5 @@
     <br>
     <%= link_to "Create offer for pet", new_pet_offer_path(@pet), class: "btn btn-primary mt-4" if current_user == @pet.user%>
   </p>
+  <p><%= link_to 'delete', pet_path(@pet), method: :delete %></p>
 </div>

@@ -21,13 +21,20 @@ class PetsController < ApplicationController
     authorize @pet
   end
 
+  def destroy
+    authorize @pet
+    @pet.destroy
+    redirect_to dashboard_path
+  end
+
+
   private
 
-  def find_pet
-    @pet = Pet.find(params[:id])
-  end
+def find_pet
+  @pet = Pet.find(params[:id])
+end
 
-  def pet_params
-    params.require(:pet).permit(:name, :description, :picture, :location, :species)
-  end
+def pet_params
+  params.require(:pet).permit(:name, :description, :picture, :location, :species)
+end
 end
