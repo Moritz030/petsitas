@@ -1,17 +1,8 @@
 <div class="container">
-<h1 class="mt-4">Offers found:</h1>
-<div class="row mt-4 mb-4">
-<% @offers.each do |offer| %>
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card-product">
-          <%= cl_image_tag(offer.pet.picture.key) %>
-        <div class="card-product-infos">
-          <h2><%= offer.pet.name  %></h2>
-          <p><%= offer.start_date %> until <%= offer.end_date %> <strong> in <%= offer.pet.location  %></strong></p>
-          <p><%= link_to "Show pet", pet_path(offer.pet)  %> <%= link_to "Request"  %> </p>
-        </div>
-      </div>
-    </div>
-<% end %>
-</div>
+  <h1 class="mt-4">Offers found:</h1>
+  <div class="row mt-4 mb-4">
+    <% @offers.each do |offer| %>
+      <%= render 'components/offer_card', offer: offer  %>
+    <% end %>
+  </div>
 </div>

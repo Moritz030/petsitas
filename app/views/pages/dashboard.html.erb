@@ -1,31 +1,29 @@
 <div class="container mt-4">
-<h1>Welcome to your dashboard</h1>
-<h2>Your Pets</h2>
-<div class="d-flex">
-  <% @pets.each do |pet| %>
-    <% @pet = pet%>
-    <%= render 'components/pet_card' %>
-  <% end %>
-</div>
-<%= link_to "Add Pet to profile", new_pet_path, class: "btn btn-primary mt-4 d-flex justify-content-center" %>
-
-<hr>
-<h2>Your Offers</h2>
-<% @offers.each do |offer| %>
-  <hr>
-  <%= render 'components/offer_card', offer: offer %>
-  <%# attached requests %>
-  <h6>Requests:</h6>
+  <h1>Welcome to your dashboard</h1>
+  <h2>Your Pets</h2>
   <div class="d-flex">
-    <% offer.requests.each do |request| %>
-      <%= render 'components/request_card', request: request  %>
+    <% @pets.each do |pet| %>
+      <% @pet = pet%>
+      <%= render 'components/pet_card' %>
     <% end %>
   </div>
+  <%= link_to "Add Pet to profile", new_pet_path, class: "btn btn-primary mt-4 d-flex justify-content-center" %>
   <hr>
-<% end %>
-<h2>My Requests</h2>
-<% @requests.each do |request| %>
-  <%= render 'components/request_card', request: request  %>
-<% end %>
-
+  <h2>Your Offers</h2>
+  <% @offers.each do |offer| %>
+    <hr>
+    <%= render 'components/offer_card', offer: offer %>
+    <%# attached requests %>
+    <h6 class="pl-3" >Requests:</h6>
+    <div class="d-flex">
+      <% offer.requests.each do |request| %>
+        <%= render 'components/request_card', request: request  %>
+      <% end %>
+    </div>
+    <hr>
+  <% end %>
+  <h2>My Requests</h2>
+  <% @requests.each do |request| %>
+    <%= render 'components/request_card', request: request  %>
+  <% end %>
 </div>

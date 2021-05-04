@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for [@offer, @request] do |f| %>
+    <h1>Create Request for <%= @offer.pet.name %></h1>
+    <%= f.input :message %>
+    <%= f.submit class: "btn btn-primary mt-4"%>
+  <% end %>
+</div>

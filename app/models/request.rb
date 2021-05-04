@@ -1,4 +1,6 @@
 class Request < ApplicationRecord
   belongs_to :user
-  has_one :pet
+  belongs_to :offer
+  attribute :status, :string, default: 'open'
+  validates :user, :message, :offer, presence: true
 end
