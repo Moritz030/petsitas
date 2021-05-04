@@ -1,7 +1,7 @@
 class OfferPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.joins(:requests).where("requests.status = 'open'").distinct
     end
   end
 
