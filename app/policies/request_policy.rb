@@ -5,6 +5,10 @@ class RequestPolicy < ApplicationPolicy
     end
   end
 
+  def update?
+    true
+  end
+
   def create?
     true
   end

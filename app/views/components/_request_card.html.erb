@@ -1,11 +1,12 @@
 <div class="m-2 p-3 bg-white">
   <p>Request by: <%= request.user.first_name %> <%= request.user.last_name %></p>
   <p>Message: <%= request.message %></p>
-  <div class="btn btn-primary">
+  <p>Status: <%= request.status %></p>
+  <div class="">
     <% if request.user == current_user %>
       delete
     <% else %>
-      accept
+      <%= link_to 'accept', offer_request_path(request.offer, request), class: "btn btn-primary", method: :patch if request.status == "open"%>
     <% end %>
   </div>
 </div>
