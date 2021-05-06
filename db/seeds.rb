@@ -6,11 +6,29 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 def time_rand 
     from = Time.now + rand(5..100)*86400
     to = from + rand(5..100)*86400
     return [Time.at(from), Time.at(to)]
 end
+
+User.all.each do |user|
+  user.destroy!
+end
+puts "All Users destroyed!"
+
+# Pet.all.each do |pet|
+#   pet.destroy!
+# end
+# puts "All Pets destroyed!"
+
+# Offer.all.each do |offer|
+#   offer.destroy!
+# end
+# puts "All Offers destroyed!"
+
 
 pets_array = ["Dog", "Cat", "Crocodile", "Rat", "Tiger", "Perrot", "Panda"]
 puts "Creating Users with pets and offers..."
