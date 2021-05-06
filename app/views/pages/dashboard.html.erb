@@ -10,18 +10,22 @@
   <%= link_to "Add Pet to profile", new_pet_path, class: "btn btn-primary mt-4 d-flex justify-content-center" %>
   <hr>
   <h2>Your Offers</h2>
-  <% @offers.each do |offer| %>
-    <hr>
-    <%= render 'components/offer_card', offer: offer %>
-    <%# attached requests %>
-    <h6 class="pl-3" >Requests:</h6>
-    <div class="d-flex">
-      <% offer.requests.each do |request| %>
-        <%= render 'components/request_card', request: request  %>
-      <% end %>
-    </div>
-    <hr>
-  <% end %>
+  <div class="row mt-4 mb-4">
+    <% @offers.each do |offer| %>
+      <hr>
+      <%= render 'components/offer_card', offer: offer %>
+      <div>
+        <%# attached requests %>
+        <h6 class="pl-3" >Requests:</h6>
+        <div class="d-flex">
+          <% offer.requests.each do |request| %>
+            <%= render 'components/request_card', request: request  %>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+    <% end %>
+  </div>
   <h2>My Requests</h2>
   <div class="d-flex">
     <% @requests.each do |request| %>
