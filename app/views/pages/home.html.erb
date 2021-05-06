@@ -1,16 +1,26 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("banner.jpg") %>);">
   <div class="container">
     <h1 class="text-white" >Petsitas</h1>
-    <p class="text-white">rent a rat</p>
+    <p class="text-white">The number one place for pet-sitting</p>
+    
+    <div class="container mt-4">
+      <form action="/offers" method="get" class="form-group form-inline">
+          <div class="form-group mt-2 mr-2">
+            <input type="text" name="species" placeholder="what species?" class="form-control" class="form-control">
+          </div>
+          <div class="form-group mt-2 mr-2">
+            <input type="text" name="location" placeholder="city?" class="form-control">
+          </div>
+          <div class="form-group mt-2 mr-2">
+            <input type="date" name="start_date" placeholder="start date?" class="form-control">
+          </div>
+          <div class="form-group mt-2 mr-2">
+            <input type="date" name="end_date" placeholder="end date?" class="form-control">
+          </div>
+          <div class="form-group mt-2 m-0">
+            <input type="submit" class="btn btn-info">
+          </div>
+      </form>
+    </div>
   </div>
-</div>
-<div class="container mt-4">
-  <div></div>
-  <form action="/offers" method="get" class="form-group">
-    <input type="text" name="species" placeholder="what species?" class="form-control" >
-    <input type="text" name="location" placeholder="city?" class="form-control">
-    <input type="date" name="start_date" placeholder="start date?" class="form-control">
-    <input type="date" name="end_date" placeholder="end date?" class="form-control">
-    <input type="submit" class="btn btn-primary mt-4">
-  </form>
 </div>
