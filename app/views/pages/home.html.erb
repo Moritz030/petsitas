@@ -1,9 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("banner.jpg") %>);">
   <div class="container">
+    <div class="container mt-4">
     <h1 class="text-white" >Petsitas</h1>
     <p class="text-white">The number one place for pet-sitting</p>
+
     
-    <div class="container mt-4">
+    
       <form action="/offers" method="get" class="form-group form-inline">
           <div class="form-group mt-2 mr-2">
             <input type="text" name="species" placeholder="what species?" class="form-control" class="form-control">
@@ -18,9 +20,10 @@
             <input type="date" name="end_date" placeholder="end date?" class="form-control">
           </div>
           <div class="form-group mt-2 m-0">
-            <input type="submit" class="btn btn-info">
+            <input type="submit" class="btn btn-info", value="Find pet">
           </div>
       </form>
+      <p style="font-size: 16px">Going on vacation? Got a pet? Create account <%= link_to "here.", new_user_registration_path %> </p>
     </div>
   </div>
 </div>
