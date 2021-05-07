@@ -7,8 +7,11 @@ class OffersController < ApplicationController
       #   offer.pet.species.downcase == params[:species].downcase
       # end
     end
+
+    params[:range].blank? ? range = 1 : range = params[:range]
+
     unless params[:location].blank?
-      pets = Pet.near(params[:location], 1)
+      pets = Pet.near(params[:location], range)
       @offers = @offers.select do |offer|
         pets.include? offer.pet
       end
