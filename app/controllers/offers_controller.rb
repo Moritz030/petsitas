@@ -8,9 +8,9 @@ class OffersController < ApplicationController
       # end
     end
 
-    params[:range].blank? ? range = 1 : range = params[:range]
 
     unless params[:location].blank?
+      params[:range].blank? ? range = 1 : range = params[:range]
       pets = Pet.near(params[:location], range)
       @offers = @offers.select do |offer|
         pets.include? offer.pet
