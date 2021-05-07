@@ -13,13 +13,13 @@ class Offer < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-  pg_search_scope :pet_location_search,
-    associated_against: {
-      pet: [ :location ]
-    },
-    using: {
-      tsearch: { prefix: true }
-    }
+  # pg_search_scope :pet_location_search,
+  #   associated_against: {
+  #     pet: [ :location ]
+  #   },
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
 
   private
 

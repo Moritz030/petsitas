@@ -29,7 +29,28 @@ puts "All Users destroyed!"
 # end
 # puts "All Offers destroyed!"
 
-locations_array = ["Apolda", "Berlin", "Hamburg", "Trier", "Potsdam", "Erfurt", "Frankfurt", "Leipzig", "München", "Dresden", "Stuttgart", "Weimar", "Jena", "Chemnitz", "Flensburg", "Bamberg", "Bochum", "Dortmund", "Mainz", "Hannover", "Waren", "Saarbrücken"]
+locations_array = ["Leipziger Straße, Mitte, Berlin, 10117, Deutschland",
+"Frankfurter Allee, Lichtenberg, Berlin, 10365, Deutschland",
+"Turmstraße, Moabit, Mitte, Berlin, 10551, Deutschland",
+"Storkower Straße, Fennpfuhl, Lichtenberg, Berlin, 10369, Deutschland",
+"Waldstraße, Reinickendorf, Berlin, 13403, Deutschland",
+"Chausseestraße, Wedding, Mitte, Berlin, 13353, Deutschland",
+"Schloßstraße, Steglitz, Steglitz-Zehlendorf, Berlin, 12165, Deutschland",
+"Uhlandstraße, Charlottenburg, Charlottenburg-Wilmersdorf, Berlin, 10623, Deutschland",
+"Kantstraße, Charlottenburg, Charlottenburg-Wilmersdorf, Berlin, 10627, Deutschland",
+"Alexanderplatz, Mitte, Berlin, 10178, Deutschland",
+"Berlin Ostkreuz",
+"Schloss Bellevue, 1, Spreeweg, Tiergarten, Mitte, Berlin, 10557, Deutschland",
+"Friedrichstraße, Mitte, Berlin, 10117, Deutschland",
+"Unter den Linden, Mitte, Berlin, 10117, Deutschland",
+"Heinrich-Heine-Straße, Luisenstadt, Mitte, Berlin, 10179, Deutschland",
+"Schlesisches Tor, Bevernstraße, Luisenstadt, Kreuzberg, Friedrichshain-Kreuzberg, Berlin, 10997, Deutschland",
+"Hermannplatz, Reuterkiez, Neukölln, Berlin, 10967, Deutschland",
+"Hermannstraße, Rollbergsiedlung, Neukölln, Berlin, 12051, Deutschland",
+"Flughafenstraße, Schillerkiez, Neukölln, Berlin, 12049, Deutschland",
+"Fennpfuhl, Lichtenberg, Berlin, 10369, Deutschland",
+"Britz, Neukölln, Berlin, Deutschland",
+"Berlin Südkreuz, Hildegard-Knef-Platz, Schöneberg, Tempelhof-Schöneberg, Berlin, 10829, Deutschland"]
 pets_array = ["Dog", "Cat", "Crocodile", "Rat", "Tiger", "Perrot", "Panda"]
 puts "Creating Users with pets and offers..."
 3.times do 

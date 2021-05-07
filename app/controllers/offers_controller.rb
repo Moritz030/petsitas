@@ -2,13 +2,19 @@ class OffersController < ApplicationController
   def index
     @offers = policy_scope(Offer)
     unless params[:species].blank?
-      @offers = policy_scope(Offer.pet_search params[:species])
+      @offers = @offers.pet_search params[:species]
       # @offers = @offers.select do |offer|
       #   offer.pet.species.downcase == params[:species].downcase
       # end
     end
     unless params[:location].blank?
-      @offers = @offers.pet_location_search params[:location]
+      pets = Pet.near(params[:location], 1)
+      @offers = @offers.select do |offer|
+        pets.include? offer.pet
+      end
+      # @offers = policy_scope(Offer.pet_location_search params[:location])
+      
+      
       # @offers = @offers.select do |offer|
       #   offer.pet.location.downcase == params[:location].downcase
       # end
