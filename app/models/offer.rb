@@ -5,6 +5,22 @@ class Offer < ApplicationRecord
   validates :start_date, :end_date, presence: true
   validate :end_date_after_start_date
 
+  include PgSearch::Model
+  pg_search_scope :pet_search,
+    associated_against: {
+      pet: [ :species, :description ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+  # pg_search_scope :pet_location_search,
+  #   associated_against: {
+  #     pet: [ :location ]
+  #   },
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
+
   private
 
   def end_date_after_start_date
