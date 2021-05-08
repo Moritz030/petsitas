@@ -1,11 +1,12 @@
-<div class="col-12 col-md-6 col-lg-3 p-3 pl-0">
+<div class="col-12 col-md-12 col-lg-6 p-3 pl-0">
   <div class="card-product bg-success">
     <%= cl_image_tag(offer.pet.picture.key,
       width: 200, height: 200, crop: :thumb, gravity: :face) %>
     <div class="card-product-infos ">
       <h2><%= offer.pet.name  %></h2>
       <p><%= offer.start_date %> until <%= offer.end_date %> <strong> in <%= offer.pet.location  %></strong></p>
-      <p><%= link_to "Show pet", pet_path(offer.pet)  %> <%= link_to "request", new_offer_request_path(offer), class: "" if current_user != offer.user%> </p>
+      <p><%= link_to "Show pet", pet_path(offer.pet)  %> </p>
+      <p><%= link_to "request", new_offer_request_path(offer), class: "" if current_user != offer.user%> </p>
       <p><%= link_to 'delete', offer_path(offer), method: :delete if current_user == offer.user %></p>
     </div>
   </div>
