@@ -1,0 +1,15 @@
+<div class="card-body text-center bg-success position-relative">
+  <div class="d-flex text-left ">
+  </div>
+  <h5 class="card-title"><%= offer.pet.name %></h5>
+  <p class="card-text pb-3">offered from <%= offer.start_date %> to <%= offer.end_date %>.</p>
+  <%= cl_image_tag(offer.pet.picture.key,
+      width: 40, height: 40, crop: :thumb, gravity: :face, class: "pet-thumb") %>
+  <div class="cards">
+    <% offer.requests.each do |request| %>
+      <%= render 'components/request_card', request: request  %>
+    <% end %>
+  </div>
+  <div class="text-right">
+    <%= link_to 'delete', offer_path(offer), method: :delete %></div>
+</div>

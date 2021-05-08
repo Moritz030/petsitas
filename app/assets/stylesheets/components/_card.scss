@@ -36,3 +36,22 @@
   width: 100%;
   height: 200px;
 }
+
+.pet-thumb {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 8px;
+}
+
+.underline {
+  border-bottom: 1px solid black;
+  width: 10%;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
