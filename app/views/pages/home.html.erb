@@ -6,7 +6,7 @@
 
     
     
-     <%= render "components/form" %>
+     <%= render "components/form", location: params[:location], species: params[:species] %>
       <p style="font-size: 16px">Going on vacation? Got a pet? Create account <%= link_to "here.", new_user_registration_path %> </p>
     </div>
   </div>
