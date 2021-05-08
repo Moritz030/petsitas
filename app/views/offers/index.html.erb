@@ -1,7 +1,11 @@
 <div class="container">
-  <h1 class="mt-4">Offers found:</h1>
+<div class="mt-4"></div>
+        <%= render "components/form" %>
+          <h4 >Offers found:</h1>
   <div class="row mt-4 mb-4">
+
     <% @offers.each do |offer| %>
+
       <%= render 'components/offer_card', offer: offer  %>
     <% end %>
   </div>

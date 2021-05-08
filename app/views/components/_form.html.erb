@@ -1,0 +1,33 @@
+<form action="/offers" method="get" class="form-group">
+      <div class="form-row">
+          <div class="form-group col-3">
+            <input type="text" name="species" placeholder="what species?" class="form-control" class="form-control">
+          </div>
+          <div class="form-group col-3">
+            <input type="text" name="location" id="location-id" placeholder="location?" class="form-control">
+          </div>
+          <div class="form-group pt-2 col-5 col-lg-3">
+            <input type="range" class="form-range slider" value="1" min="1" max="20" name="range" step="1" id="customRange3">
+          </div>
+          <div class="col-1 pt-1">
+            <div class="slider-range">
+              <p style="color: #9f5f80; font-size: 16px" id="slider-range" class="pt-1">1km</p>
+            </div>
+          </div>
+
+          <div class="form-group mt-2 col-6">
+            <input type="date" name="start_date" placeholder="start date?" class="form-control">
+          </div>
+          <div class="form-group mt-2 col-6">
+            <input type="date" name="end_date" placeholder="end date?" class="form-control">
+          </div>
+      </div>
+      <div class="form-row">
+          
+      </div>
+      <div class="form-row">
+          <div class="form-group m-0 col-4 col-md-3 col-lg-2">
+            <input type="submit" class="btn btn-info", value="Find pet">
+          </div>
+      </div>
+      </form>
