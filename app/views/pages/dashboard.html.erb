@@ -19,7 +19,7 @@
   </div>
   <h2>My Requests</h2>
   <div class="underline"></div>
-  <div class="cards">
+  <div class="cards mb-2">
     <% @requests.each do |request| %>
       <%= render 'components/request_card', request: request  %>
     <% end %>
