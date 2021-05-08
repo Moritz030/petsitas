@@ -1,25 +1,37 @@
 <form action="/offers" method="get" class="form-group">
       <div class="form-row">
           <div class="form-group col-3">
-            <input type="text" name="species" placeholder="what species?" class="form-control" class="form-control">
+            <input type="text" name="species" placeholder="what species?" class="form-control" class="form-control" value="<%= params[:species] %>">
           </div>
           <div class="form-group col-3">
-            <input type="text" name="location" id="location-id" placeholder="location?" class="form-control">
+            <input type="text" name="location" id="location-id" placeholder="location?" class="form-control" value="<%= params[:location] %>">
           </div>
           <div class="form-group pt-2 col-5 col-lg-3">
-            <input type="range" class="form-range slider" value="1" min="1" max="20" name="range" step="1" id="customRange3">
+            <input type="range" class="form-range slider" min="1" max="20" name="range" step="1" id="customRange3"
+            <% if !params[:range].blank? %>
+             value="<%= params[:range] %>"
+             <% else %>
+             value="1"
+             <% end %>
+             >
           </div>
           <div class="col-1 pt-1">
             <div class="slider-range">
-              <p style="color: #9f5f80; font-size: 16px" id="slider-range" class="pt-1">1km</p>
+              <p style="color: #9f5f80; font-size: 16px" id="slider-range" class="pt-1">
+              <% if !params[:range].blank? %>
+              <%= params[:range] %>
+              <% else %>
+              1
+             <% end %>
+             km</p>
             </div>
           </div>
 
           <div class="form-group mt-2 col-6">
-            <input type="date" name="start_date" placeholder="start date?" class="form-control">
+            <input type="date" name="start_date" placeholder="start date?" class="form-control" value="<%= params[:start_date] %>">
           </div>
           <div class="form-group mt-2 col-6">
-            <input type="date" name="end_date" placeholder="end date?" class="form-control">
+            <input type="date" name="end_date" placeholder="end date?" class="form-control" value="<%= params[:end_date] %>">
           </div>
       </div>
       <div class="form-row">
